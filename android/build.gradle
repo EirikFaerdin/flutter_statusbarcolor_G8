@@ -28,11 +28,21 @@ android {
     compileSdkVersion 34
     namespace "com.sameer.flutterstatusbarcolor.flutterstatusbarcolor"
 
+    //Added compileOptions and kotlinOptions
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled true
+    }
+    kotlinOptions {
+        jvmTarget = '17' //Eirik 13.09.24: Changed from 1.8
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 33 //Eirik 22.09.24: Was 16
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
